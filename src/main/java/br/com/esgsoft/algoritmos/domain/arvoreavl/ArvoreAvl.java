@@ -64,6 +64,22 @@ public class ArvoreAvl {
             }
         }
     }
+    
+    private void rotacaoDireita (Node noEntrada)
+    {
+        Node noTemp = noEntrada.getEsq();
+        noEntrada.setEsq(noTemp.getDir());
+        noTemp.setDir(noEntrada);
+        noEntrada =  noTemp;
+    }
+    
+        private void rotacaoEsquerda (Node noEntrada)
+    {
+        Node noTemp = noEntrada.getDir();
+        noEntrada.setDir(noTemp.getEsq());
+        noTemp.setEsq(noEntrada);
+        noEntrada =  noTemp;
+    }
 
     public static void printArvorePreOrdem(Node no) {
         if (no != null) {
